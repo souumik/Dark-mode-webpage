@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* positioning elements one by one in column */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.3s linear;
+    
+}
+body.dark {
+    background-color: rgb(37, 33, 39);
+    transition: background 0.3s linear;
+}
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   color: rgb(62, 68, 55); 
+}
+
+body.dark p {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(212, 225, 225);
+}
+.label {
+    background-color: #111; 
+    height: 23px;
+    width: 50px;
+    border-radius: 20px;
+    padding: 5px;
+    position: relative;
+    display: flex; /* flexible placing */
+    align-items: center; /* it'll align the icons inside the box */
+    justify-content: space-between;
+    cursor: pointer;
+}
+.fa-moon-o {
+     color:#cececb;
+}
+.fa-sun-o {
+    color: #e8b665;
+}
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+.ball {
+    background-color: #cececb;
+    border-radius: 47%;
+    height: 18px;
+    width: 20px;
+    top: 2px;
+    left: 4px;
+    position: absolute; /* outer box relative and inner one absolute */
+    transition: transform 0.3s linear; /* moving the ball in slow speed */
+}
+.checkbox:checked + .label .ball { /*changing the ball movement after label is checked*/
+    transform: translate(22px);
+    background-color:#e8b665;
+}
+
+
+
+
+
+/*checking the checkbox*/
+.checkbox:checked + .label {
+    background-color: rgb(70, 117, 121);
+}
